@@ -1,3 +1,11 @@
+@echo off
+setlocal EnableExtensions
+
+set "SCRIPT_DIR=%~dp0"
+set "TARGET=%SCRIPT_DIR%src\main.py"
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+  "$content = @'
 import sys
 import time
 from PySide6.QtWidgets import QApplication
@@ -93,3 +101,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+'@
+Set-Content -Path '%TARGET%' -Value $content -Encoding UTF8"
+
+if %ERRORLEVEL% NEQ 0 (
+  echo Failed to update %TARGET%
+  exit /b 1
+)
+
+echo Updated %TARGET%
+exit /b 0
