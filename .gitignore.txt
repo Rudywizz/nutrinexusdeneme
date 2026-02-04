@@ -1,0 +1,16 @@
+# Python cache (KESİNLİKLE REPO'YA GİRMEZ)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
