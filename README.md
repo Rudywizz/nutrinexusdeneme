@@ -29,6 +29,22 @@ python -m src.main
 - Log: `C:\nutrinexus_backup\logs\app.log`
 - Eğer C: yazılamazsa otomatik olarak kullanıcı dizinine düşer.
 
+## Güncelleme Paketi (ZIP) Oluşturma
+GitHub kullanmadan hızlıca güncelleme paylaşmak için tek bir ZIP oluşturabilirsiniz:
+
+```powershell
+.\make_update_zip.bat
+```
+
+Komut, repo kökünde `nutrinexus_updates.zip` dosyasını üretir. Bu ZIP içinde:
+- `src/main.py`
+- `src/ui/screens/settings.py`
+- `src/ui/theme/style.qss`
+- `src/ui/theme/palette.py`
+- `apply_settings_layout_update_onefile.bat`
+
+ZIP’i başka bir bilgisayara kopyalayıp, aynı repo köküne açarak güncelleyebilirsiniz.
+
 ## Autosave (Elektrik kesintisi senaryosu)
 - Anamnez alanı **10 saniyede bir** `autosave_drafts` tablosuna taslak atar.
 - Uygulama yeniden açılınca aynı danışan için taslak varsa **kurtarma bildirimi** çıkar.
